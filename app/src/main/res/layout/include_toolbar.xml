@@ -20,7 +20,7 @@
             android:layout_marginStart="@dimen/mrgMedium"
             android:layout_marginTop="@dimen/mrgRegular"
             android:layout_marginBottom="@dimen/mrgRegular"
-            app:layout_constraintBottom_toTopOf="@id/vDivider"
+            app:layout_constraintBottom_toTopOf="@id/inDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,20 +33,19 @@
             android:layout_marginTop="@dimen/mrgRegular"
             android:layout_marginEnd="@dimen/mrgMedium"
             android:layout_marginBottom="@dimen/mrgRegular"
+            android:onClick="onClick"
             android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@id/vDivider"
+            app:layout_constraintBottom_toTopOf="@id/inDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_more_black_24" />
 
-        <View
-            android:id="@+id/vDivider"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_1sdp"
+        <include
+            android:id="@+id/inDivider"
+            layout="@layout/divider"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ibToolbar"
-            android:background="@color/colorDivider"/>
+            app:layout_constraintTop_toBottomOf="@id/ibToolbar"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.Toolbar>

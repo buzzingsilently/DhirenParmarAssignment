@@ -1,45 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llItemContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/mrgMedium">
+    android:background="@drawable/selector_item_repo"
+    android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivProfile"
-        android:layout_width="@dimen/_32sdp"
-        android:layout_height="@dimen/_32sdp"
-        android:layout_marginEnd="@dimen/mrgMedium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_refresh_black_24" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvHeader"
-        style="@style/tvHeader"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/mrgMedium"
-        android:layout_marginBottom="@dimen/mrgTiny"
-        app:layout_constraintBottom_toTopOf="@id/tvFooter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivProfile"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/app_name" />
+        android:layout_margin="@dimen/mrgMedium">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvFooter"
-        style="@style/tvFooter"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/mrgMedium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivProfile"
-        app:layout_constraintTop_toBottomOf="@id/tvHeader"
-        tools:text="@string/app_name" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvAuthor"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:srcCompat="@drawable/ic_refresh_black_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthor"
+            style="@style/tvFooter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mrgMedium"
+            android:layout_marginBottom="@dimen/mrgTiny"
+            app:layout_constraintBottom_toTopOf="@id/tvRepoName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivProfile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="mbinary" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRepoName"
+            style="@style/tvHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mrgMedium"
+            app:layout_constraintBottom_toTopOf="@id/tvDesc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivProfile"
+            app:layout_constraintTop_toBottomOf="@id/tvAuthor"
+            tools:text="USTC-CS-Courses-Resource" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/grpExpand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tvDesc,tvLang,tvStar,tvFork" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDesc"
+            style="@style/tvFooter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mrgSmall"
+            android:layout_marginStart="@dimen/mrgMedium"
+            app:layout_constraintBottom_toTopOf="@id/tvLang"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivProfile"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoName"
+            tools:text="This is a description field." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLang"
+            style="@style/tvFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mrgMedium"
+            android:layout_marginTop="@dimen/mrgSmall"
+            android:drawableLeft="@drawable/ic_circle_white_8"
+            android:drawablePadding="@dimen/mrgTiny"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvStar"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/ivProfile"
+            app:layout_constraintTop_toBottomOf="@id/tvDesc"
+            tools:text="C++" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStar"
+            style="@style/tvFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mrgMedium"
+            android:layout_marginTop="@dimen/mrgSmall"
+            android:drawableStart="@drawable/ic_star_yellow_16"
+            android:drawablePadding="@dimen/mrgTiny"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvFork"
+            app:layout_constraintStart_toEndOf="@id/tvLang"
+            app:layout_constraintTop_toBottomOf="@id/tvDesc"
+            tools:text="14,236" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFork"
+            style="@style/tvFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mrgMedium"
+            android:layout_marginTop="@dimen/mrgSmall"
+            android:drawableStart="@drawable/ic_fork_black_16"
+            android:drawablePadding="@dimen/mrgTiny"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvStar"
+            app:layout_constraintTop_toBottomOf="@id/tvDesc"
+            tools:text="4376" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/inDivider"
+        layout="@layout/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider" />
+</androidx.appcompat.widget.LinearLayoutCompat>
