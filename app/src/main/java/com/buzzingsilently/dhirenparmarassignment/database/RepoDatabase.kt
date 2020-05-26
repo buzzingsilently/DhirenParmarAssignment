@@ -9,7 +9,7 @@ import com.buzzingsilently.dhirenparmarassignment.model.RepoModel
 
 @Database(
     entities = [RepoModel::class],
-    exportSchema = false,
+     exportSchema= false,
     version = 1
 )
 @TypeConverters(value = [(BuiltByTypeConverter::class)])
