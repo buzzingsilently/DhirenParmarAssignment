@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="HorizontalProgressBar">
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDuration">10</item>
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:maxHeight">@dimen/_24sdp</item>
+        <item name="android:minHeight">@dimen/_24sdp</item>
+        <item name="android:progressBackgroundTint">@color/colorDividerGreen</item>
+        <item name="android:progressBackgroundTintMode">multiply</item>
+    </style>
+</resources>

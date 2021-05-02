@@ -1,4 +1,4 @@
-package com.buzzingsilently.dhirenparmarassignment.database
+package com.buzzingsilently.dhirenparmarassignment.database.converter
 
 import androidx.room.TypeConverter
 import com.buzzingsilently.dhirenparmarassignment.model.BuiltBy

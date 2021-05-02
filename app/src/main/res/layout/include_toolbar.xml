@@ -17,7 +17,6 @@
             style="@style/tvToolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/mrgMedium"
             android:layout_marginTop="@dimen/mrgRegular"
             android:layout_marginBottom="@dimen/mrgRegular"
             app:layout_constraintBottom_toTopOf="@id/inDivider"
@@ -28,17 +27,16 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/ibToolbar"
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            android:layout_marginTop="@dimen/mrgRegular"
-            android:layout_marginEnd="@dimen/mrgMedium"
-            android:layout_marginBottom="@dimen/mrgRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8ssp"
+            android:layout_margin="@dimen/mrgSmall"
             android:onClick="onClick"
-            android:background="@android:color/transparent"
+            android:background="?selectableItemBackgroundBorderless"
             app:layout_constraintBottom_toTopOf="@id/inDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_more_black_24" />
+            android:src="@drawable/ic_sign_out_24" />
 
         <include
             android:id="@+id/inDivider"

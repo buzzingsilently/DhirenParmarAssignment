@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -50,6 +50,8 @@
 
     <!-- Green button style -->
     <style name="btnGreen" parent="TextAppearance.AppCompat.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/_15ssp</item>
         <item name="android:textColor">@color/colorFtGreen</item>
         <item name="android:fontFamily">@font/ft_roboto_medium</item>
@@ -58,5 +60,54 @@
         <item name="android:layout_margin">@dimen/mrgMedium</item>
         <item name="android:background">@drawable/btn_bg_green</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxStrokeWidth">@dimen/_1sdp</item>
+        <item name="boxStrokeWidthFocused">@dimen/_1sdp</item>
+        <item name="boxStrokeColor">@color/box_stroke_color_selector</item>"
+        <item name="android:textColorHint">@color/colorFtHint</item>
+        <item name="boxStrokeErrorColor">@color/colorFtError</item>
+        <item name="errorIconDrawable">@drawable/ic_baseline_error_outline_24</item>
+        <item name="fontFamily">@font/ft_roboto_regular</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_black</item>
+        <item name="hintTextAppearance">@style/HintTextStyle</item>
+        <item name="prefixTextAppearance">@style/PrefixTextInputLayout</item>
+        <item name="endIconTint">@color/colorEnabled</item>
+    </style>
+
+    <style name="HintTextStyle">
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:fontFamily">@font/ft_roboto_regular</item>
+    </style>
+
+    <style name="PrefixTextInputLayout">
+        <item name="android:textColor">@color/colorFtBlack</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:fontFamily">@font/ft_roboto_regular</item>
+    </style>
+
+    <style name="TextInputEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/box_stroke_color_selector</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:ellipsize">end</item>
+        <item name="singleLine">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/ft_roboto_regular</item>
+    </style>
+
+    <style name="HorizontalProgressBar">
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDuration">10</item>
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:maxHeight">@dimen/_24sdp</item>
+        <item name="android:minHeight">@dimen/_24sdp</item>
     </style>
 </resources>

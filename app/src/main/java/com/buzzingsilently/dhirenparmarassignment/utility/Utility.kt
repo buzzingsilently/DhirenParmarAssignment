@@ -25,10 +25,19 @@ object Utility {
     }
 
     //check is network connection available or not
-    fun hasNetwork(context: Context) : Boolean{
+    fun hasNetwork(view: View, context: Context) : Boolean{
         val connectivityManager= context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo=connectivityManager.activeNetworkInfo
-        return  networkInfo!=null && networkInfo.isConnected
+        return if (networkInfo!=null && networkInfo.isConnected) {
+            true
+        } else {
+            showSnackBar(view, context.getString(R.string.error_no_connection))
+            false
+        }
+    }
+
+    fun hideKeyboard() {
+
     }
 
     //display snackbar on screen

@@ -1,14 +1,44 @@
 <resources>
     <string name="app_name">Dhiren Assignment</string>
 
-    <string name="msg_coming_soon">Coming soon…</string>
-
-    <!--Repo list activity-->
-    <string name="title_trending">Trending</string>
-    <string name="btn_retry">Retry</string>
-    <string name="info_something_went_wrong">Something went wrong..</string>
-    <string name="info_an_alien">An alien is probably blocking your signal!.</string>
-
-    <!--Repo list activity-->
     <string name="error_no_connection">No internet connection available.</string>
+
+    <!--Login Activity-->
+    <string name="title_login">GitHub</string>
+    <string name="hint_full_name">Enter Full Name</string>
+    <string name="hint_email">Enter Email</string>
+    <string name="hint_password">Enter Password</string>
+    <string name="hint_confirm_password">Enter Confirm Password</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="error_empty_full_name">Please enter full name!</string>
+    <string name="error_empty_email">Please enter email!</string>
+    <string name="error_empty_password">Please enter password!</string>
+    <string name="error_valid_email">Please enter valid email!</string>
+    <string name="error_valid_password">Please Make sure password\'s at least 8 characters containing numbers and/or lowercase letters!</string>
+    <string name="error_valid_confirm_password">Confirm Password must match with Password!</string>>
+    <string name="title_sign_up_success">Congratulations!</string>
+    <string name="message_sign_up_success">You are now part of GitHub Family!</string>
+    <string name="btn_sign_up_positive">Next</string>
+    <string name="message_sign_in_success">Welcome to GitHub!</string>
+    <string name="error_sign_up_failure">Sorry, please try again later!</string>
+    <string name="error_sign_in_failure">We could not find your details, please sign up!</string>
+    <string name="load_sign_up">Creating Profile…</string>
+    <string name="load_sign_in">Signing In…</string>
+
+    <!--Repo List Activity-->
+    <string name="title_repo_list">My Repositories</string>
+    <string name="btn_retry">Retry</string>
+    <string name="info_something_went_wrong">Something went wrong…</string>
+    <string name="info_an_alien">An alien is probably blocking your signal!.</string>
+    <string name="error_empty_list">No saved watched list, start searching &amp; watching now!.</string>
+    <string name="btn_watch">Watch</string>
+    <string name="btn_unwatch">Unwatch</string>
+
+    <!--SignOut Dialog-->
+    <string name="title_signout">Are you sure?</string>
+    <string name="hint_search">Search by Repository Name</string>
+    <string name="message_signout">You really want to Sign-Out!</string>
+    <string name="btn_signout_positive">Yes</string>
+    <string name="btn_signout_negative">No</string>
 </resources>

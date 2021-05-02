@@ -5,7 +5,7 @@
     android:id="@+id/llItemContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/selector_item_repo"
+    android:background="@color/colorDivider"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +17,7 @@
             android:id="@+id/ivProfile"
             android:layout_width="@dimen/_32sdp"
             android:layout_height="@dimen/_32sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnWatch"
             app:layout_constraintEnd_toStartOf="@+id/tvAuthor"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,8 +62,8 @@
             style="@style/tvFooter"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mrgSmall"
             android:layout_marginStart="@dimen/mrgMedium"
+            android:layout_marginTop="@dimen/mrgSmall"
             app:layout_constraintBottom_toTopOf="@id/tvLang"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ivProfile"
@@ -77,9 +77,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/mrgMedium"
             android:layout_marginTop="@dimen/mrgSmall"
-            android:drawableLeft="@drawable/ic_circle_white_8"
+            android:layout_marginBottom="@dimen/_8ssp"
+            android:drawableStart="@drawable/ic_circle_white_8"
             android:drawablePadding="@dimen/mrgTiny"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnWatch"
             app:layout_constraintEnd_toStartOf="@id/tvStar"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -94,9 +95,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/mrgMedium"
             android:layout_marginTop="@dimen/mrgSmall"
+            android:layout_marginBottom="@dimen/_8ssp"
             android:drawableStart="@drawable/ic_star_yellow_16"
             android:drawablePadding="@dimen/mrgTiny"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnWatch"
             app:layout_constraintEnd_toStartOf="@id/tvFork"
             app:layout_constraintStart_toEndOf="@id/tvLang"
             app:layout_constraintTop_toBottomOf="@id/tvDesc"
@@ -109,13 +111,26 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/mrgMedium"
             android:layout_marginTop="@dimen/mrgSmall"
+            android:layout_marginBottom="@dimen/_8ssp"
             android:drawableStart="@drawable/ic_fork_black_16"
             android:drawablePadding="@dimen/mrgTiny"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnWatch"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvStar"
             app:layout_constraintTop_toBottomOf="@id/tvDesc"
             tools:text="4376" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnWatch"
+            style="@style/btnGreen"
+            android:layout_margin="0dp"
+            android:onClick="onClickedPrimary"
+            app:layout_goneMarginTop="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLang"
+            tools:text="@string/btn_unwatch" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include

@@ -2,7 +2,7 @@ package com.buzzingsilently.dhirenparmarassignment.model
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.room.*
-import com.buzzingsilently.dhirenparmarassignment.database.BuiltByTypeConverter
+import com.buzzingsilently.dhirenparmarassignment.database.converter.BuiltByTypeConverter
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "repository")

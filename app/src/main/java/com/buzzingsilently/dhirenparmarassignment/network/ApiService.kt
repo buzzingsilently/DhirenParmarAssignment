@@ -1,22 +1,21 @@
 package com.buzzingsilently.dhirenparmarassignment.network
 
-import com.buzzingsilently.dhirenparmarassignment.model.RepoModel
+import com.buzzingsilently.dhirenparmarassignment.network.response.SearchRepoListResponse
 import com.buzzingsilently.dhirenparmarassignment.utility.AppConstant.BASE_URL
-import com.buzzingsilently.dhirenparmarassignment.utility.AppConstant.REPO_LIST
+import com.buzzingsilently.dhirenparmarassignment.utility.AppConstant.SEARCH_REPO_LIST
 import io.reactivex.Observable
-import io.reactivex.Single
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET(REPO_LIST)
-    fun getRepoList(): Observable<List<RepoModel>>
+    @GET(SEARCH_REPO_LIST)
+    fun searchRepoList(@Query("q") searchKey: String, @Query("page") page: Int, @Query("per_page") perPage: Int): Observable<SearchRepoListResponse>
 
     companion object {
         fun getService(): ApiService {

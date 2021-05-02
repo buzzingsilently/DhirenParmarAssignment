@@ -1,23 +1,23 @@
 package com.buzzingsilently.dhirenparmarassignment.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.*
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.content.ContextCompat
 import com.buzzingsilently.dhirenparmarassignment.R
 import com.buzzingsilently.dhirenparmarassignment.base.BaseRecyclerAdapter
-import com.buzzingsilently.dhirenparmarassignment.model.RepoModel
+import com.buzzingsilently.dhirenparmarassignment.model.Repository
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_repo.view.*
 
 class RepoAdapter(
     private var context: Context,
-    listener: RvItemClickListener<RepoModel>
+    listener: RvItemClickListener<Repository>
 ) :
-    BaseRecyclerAdapter<RepoModel, RepoAdapter.RepoViewHolder>(RepoModel.DIFF_CALLBACK, listener) {
+    BaseRecyclerAdapter<Repository, RepoAdapter.RepoViewHolder>(Repository.DIFF_CALLBACK, listener) {
 
     //stores last clicked item index
     private var mLastExpandedIndex: Int = -1
@@ -33,50 +33,46 @@ class RepoAdapter(
 
     //Expand or collapse item and previously clicked item based on params
     //currentClickIndex : Int - latest clicked item index
-    fun performClick(currentClickIndex: Int) {
-        getItem(currentClickIndex)!!.isExpanded =
-            !getItem(currentClickIndex)!!.isExpanded
+    /*fun performClick(currentClickIndex: Int) {
+        getItem(currentClickIndex)!!.isWatching =
+            !getItem(currentClickIndex)!!.isWatching
         notifyItemChanged(currentClickIndex)
 
         if (mLastExpandedIndex != -1 && mLastExpandedIndex != currentClickIndex && getItem(
                 mLastExpandedIndex
-            )!!.isExpanded
+            )!!.isWatching
         ) {
-            getItem(mLastExpandedIndex)!!.isExpanded = false
+            getItem(mLastExpandedIndex)!!.isWatching = false
             notifyItemChanged(mLastExpandedIndex)
         }
 
         mLastExpandedIndex = currentClickIndex
-    }
+    }*/
 
     inner class RepoViewHolder(private var view: View) : BaseViewHolder(view) {
 
         init {
-            clickableViews(view.llItemContainer)
+            clickableViews(view.btnWatch)
         }
 
-        override fun bind(item: RepoModel) {
+        override fun bind(item: Repository) {
             Picasso.get().load(item.getAvtar()).into(itemView.ivProfile)
-            view.tvAuthor.text = item.getAvtarName()
+            view.tvAuthor.text = item.getOwnerName()
             view.tvRepoName.text = item.getRepoName()
             view.tvDesc.text = item.getDesc()
-
-            if (item.getLang().isNotEmpty()) {
-                view.tvLang.text = item.getLang()
-                DrawableCompat.setTint(
-                    view.tvLang.compoundDrawables[0],
-                    Color.parseColor(item.getLangColor())
-                )
-            } else {
-                view.tvLang.visibility = INVISIBLE
-            }
+            view.tvLang.text = item.getLang()
             view.tvStar.text = item.getStarCount().toString()
             view.tvFork.text = item.getForkCount().toString()
 
-            if (item.isExpanded)
+            if (item.isWatching) {
+                view.llItemContainer.setBackgroundColor(ContextCompat.getColor(context, R.color.colorDivider))
+                view.btnWatch.text = context.getString(R.string.btn_unwatch)
                 view.grpExpand.visibility = VISIBLE
-            else
+            } else {
+                view.llItemContainer.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite))
+                view.btnWatch.text = context.getString(R.string.btn_watch)
                 view.grpExpand.visibility = GONE
+            }
         }
     }
 }
